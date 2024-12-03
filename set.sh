@@ -250,14 +250,14 @@
                          clear && echo \"Update Success\" && echo -------------- && figlet Success && figlet \$(sed '1q;d' 'ver.cfg') && figlet FemurTech && echo Restart to apply changes 
                  fi 
          else 
-                 git clone https://github.com/pixelPusher03/t-style 
+                 git clone https://github.com/pixelPusher03/tstyle 
                  cd tstyle
                  prm sh 
                  clear 
                  bash 
                  bash setup.sh 
                  wait 
-                 echo \"Update Success\" && echo -------------- && figlet Success && figlet \$(sed '1q;d' '/data/data/com.termux/files/home/termuxstyle/ver.cfg') && figlet Expert && echo Restart to apply changes 
+                 echo \"Update Success\" && echo -------------- && figlet Success && figlet \$(sed '1q;d' '/data/data/com.termux/files/home/tstyle/ver.cfg') && figlet Expert && echo Restart to apply changes 
          fi 
          cd \$ppath 
  } 
@@ -266,23 +266,23 @@
  figlet $uname 
  PS1='\033[1;91mroot@termux[\033[1;93m\W\033[1;91m]: 
  # \033[1;92m' 
- if [ -d \"\$HOME/termuxstyling\" ] 
+ if [ -d \"\$HOME/tstyle\" ] 
  then 
-         if grep -q '# 011' \"/data/data/com.termux/files/home/termuxstyling/.user.cfg\" 
+         if grep -q '# 011' \"/data/data/com.termux/files/home/tstyle/.user.cfg\" 
          then 
-                 lnum=\$( sed '3q;d' \"/data/data/com.termux/files/home/termuxstyling/.user.cfg\" ) 
+                 lnum=\$( sed '3q;d' \"/data/data/com.termux/files/home/tstyle/.user.cfg\" ) 
                  lnum=\$( echo \$lnum | sed 's/# 011//g' ) 
                  lnum=\$( echo \$lnum | sed 's/ //g' ) 
-                 echo \$( sed '3q;d' \"/data/data/com.termux/files/home/termuxstyling/.user.cfg\" ) 
+                 echo \$( sed '3q;d' \"/data/data/com.termux/files/home/tstyle/.user.cfg\" ) 
                          if [[ ! \$lnum -eq 5 ]] 
                          then 
                                  lnum=\$((\$lnum+1)) 
-                                 sed -i \"/.*# 011.*/ c\\ \$lnum # 011\" \"/data/data/com.termux/files/home/termuxstyling/.user.cfg\" 
+                                 sed -i \"/.*# 011.*/ c\\ \$lnum # 011\" \"/data/data/com.termux/files/home/tstyle/.user.cfg\" 
                          else 
                                  lnum=1 
-                                 sed -i \"/.*# 011.*/ c\\ \$lnum # 011\" \"/data/data/com.termux/files/home/termuxstyling/.user.cfg\" 
+                                 sed -i \"/.*# 011.*/ c\\ \$lnum # 011\" \"/data/data/com.termux/files/home/tstyle/.user.cfg\" 
                                  cd \$HOME 
-                                 cd termuxstyling 
+                                 cd tstyle 
                                  git fetch >/dev/null 
                                  test=\$(git status | grep 'Your branch') 
                                  echo \$test 
@@ -294,7 +294,7 @@
                          fi 
          else 
                  echo hi 
-                 echo \"1 # 011\" >> \"/data/data/com.termux/files/home/termuxstyling/.user.cfg\" 
+                 echo \"1 # 011\" >> \"/data/data/com.termux/files/home/tstyle/.user.cfg\" 
          fi 
  else 
          updatedw 
@@ -314,7 +314,7 @@
  alias upg=\"git reset --hard;git pull\" 
  alias update=\"apt-get update;apt-get upgrade\"" > /data/data/com.termux/files/usr/etc/bash.bashrc 
  cd /$HOME 
- cd termuxstyling 
+ cd tstyle
  echo Script made by 
  toilet The 
  toilet Developer 
