@@ -250,14 +250,14 @@
                          clear && echo \"Update Success\" && echo -------------- && figlet Success && figlet \$(sed '1q;d' 'ver.cfg') && figlet FemurTech && echo Restart to apply changes 
                  fi 
          else 
-                 git clone https://github.com/thedeveloper03/termuxstyling 
-                 cd termuxstyling 
+                 git clone https://github.com/pixelPusher03/t-style 
+                 cd tstyle
                  prm sh 
                  clear 
                  bash 
                  bash setup.sh 
                  wait 
-                 echo \"Update Success\" && echo -------------- && figlet Success && figlet \$(sed '1q;d' '/data/data/com.termux/files/home/termuxstyling/ver.cfg') && figlet Expert && echo Restart to apply changes 
+                 echo \"Update Success\" && echo -------------- && figlet Success && figlet \$(sed '1q;d' '/data/data/com.termux/files/home/termuxstyle/ver.cfg') && figlet Expert && echo Restart to apply changes 
          fi 
          cd \$ppath 
  } 
